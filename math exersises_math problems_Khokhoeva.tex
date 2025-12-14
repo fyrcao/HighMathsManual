@@ -1,0 +1,176 @@
+\documentclass[12pt]{article}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{a4paper, margin=1.5cm}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1em}
+
+\begin{document}
+
+\section*{Отработка коллоквиума}
+\subsection*{1. Комплексные числа}
+
+\textbf{Дано:} \( x = 1 + 2i, \quad y = 1 + 4i \)
+
+\begin{enumerate}
+    \item Сумма:
+    \[
+    x + y = (1 + 2i) + (1 + 4i) = 2 + 6i
+    \]
+    
+    \item Разность:
+    \[
+    x - y = (1 + 2i) - (1 + 4i) = -2i
+    \]
+    
+    \item Произведение:
+    \[
+    x \cdot y = (1 + 2i)(1 + 4i) = 1 + 4i + 2i + 8i^2 = 1 + 6i - 8 = -7 + 6i
+    \]
+    
+    \item Частное:
+    \[
+    \frac{x}{y} = \frac{1 + 2i}{1 + 4i} = \frac{(1 + 2i)(1 - 4i)}{(1 + 4i)(1 - 4i)} = \frac{1 - 4i + 2i - 8i^2}{1 + 16} = \frac{1 - 2i + 8}{17} = \frac{9 - 2i}{17}
+    \]
+\end{enumerate}
+
+\subsection*{2. Тригонометрическая форма комплексных чисел}
+
+\begin{enumerate}
+    \item \( z_1 = 7i \) \\
+    Модуль: \( |z_1| = 7 \) \\
+    Аргумент: \( \arg(z_1) = \frac{\pi}{2} \) \\
+    Тригонометрическая форма:
+    \[
+    z_1 = 7\left(\cos\frac{\pi}{2} + i\sin\frac{\pi}{2}\right)
+    \]
+    
+    \item \( z_2 = -1 + i \) \\
+    Модуль: \( |z_2| = \sqrt{(-1)^2 + 1^2} = \sqrt{2} \) \\
+    Аргумент: \( \arg(z_2) = \pi - \arctan\left(\frac{1}{1}\right) = \pi - \frac{\pi}{4} = \frac{3\pi}{4} \) \\
+    Тригонометрическая форма:
+    \[
+    z_2 = \sqrt{2}\left(\cos\frac{3\pi}{4} + i\sin\frac{3\pi}{4}\right)
+    \]
+\end{enumerate}
+
+\subsection*{3. Операции с матрицами}
+
+\textbf{Дано:} 
+\[
+A = \begin{pmatrix} -4 & 5 \\ 2 & 7 \end{pmatrix}, \quad B = \begin{pmatrix} -3 & -3 \\ 0 & 11 \end{pmatrix}
+\]
+
+\begin{enumerate}
+    \item Сумма:
+    \[
+    A + B = \begin{pmatrix} -4-3 & 5-3 \\ 2+0 & 7+11 \end{pmatrix} = \begin{pmatrix} -7 & 2 \\ 2 & 18 \end{pmatrix}
+    \]
+    
+    \item Разность:
+    \[
+    A - B = \begin{pmatrix} -4+3 & 5+3 \\ 2-0 & 7-11 \end{pmatrix} = \begin{pmatrix} -1 & 8 \\ 2 & -4 \end{pmatrix}
+    \]
+    
+    \item Произведение:
+    \[
+    A \cdot B = \begin{pmatrix} (-4)(-3)+5\cdot0 & (-4)(-3)+5\cdot11 \\ 2(-3)+7\cdot0 & 2(-3)+7\cdot11 \end{pmatrix} = \begin{pmatrix} 12 & 12+55 \\ -6 & -6+77 \end{pmatrix} = \begin{pmatrix} 12 & 67 \\ -6 & 71 \end{pmatrix}
+    \]
+    
+    \item Транспонированная матрица \( B \):
+    \[
+    B^T = \begin{pmatrix} -3 & 0 \\ -3 & 11 \end{pmatrix}
+    \]
+\end{enumerate}
+
+\subsection*{4. Решение системы уравнений}
+
+\textbf{Система:}
+\[
+\begin{cases}
+2x + 2 = x - y \\
+3x + 2y = 0
+\end{cases}
+\]
+Приведём к стандартному виду:
+\[
+\begin{cases}
+x + y = -2 \\
+3x + 2y = 0
+\end{cases}
+\]
+
+\subsubsection*{а) Метод Крамера:}
+\[
+\Delta = \begin{vmatrix} 1 & 1 \\ 3 & 2 \end{vmatrix} = 1\cdot2 - 1\cdot3 = 2 - 3 = -1
+\]
+\[
+\Delta_x = \begin{vmatrix} -2 & 1 \\ 0 & 2 \end{vmatrix} = (-2)\cdot2 - 1\cdot0 = -4
+\]
+\[
+\Delta_y = \begin{vmatrix} 1 & -2 \\ 3 & 0 \end{vmatrix} = 1\cdot0 - (-2)\cdot3 = 6
+\]
+\[
+x = \frac{\Delta_x}{\Delta} = \frac{-4}{-1} = 4, \quad y = \frac{\Delta_y}{\Delta} = \frac{6}{-1} = -6
+\]
+
+\subsubsection*{б) Метод обратной матрицы:}
+Матрица системы: \( M = \begin{pmatrix} 1 & 1 \\ 3 & 2 \end{pmatrix} \) \\
+Обратная матрица:
+\[
+M^{-1} = \frac{1}{-1} \begin{pmatrix} 2 & -1 \\ -3 & 1 \end{pmatrix} = \begin{pmatrix} -2 & 1 \\ 3 & -1 \end{pmatrix}
+\]
+Решение:
+\[
+\begin{pmatrix} x \\ y \end{pmatrix} = M^{-1} \begin{pmatrix} -2 \\ 0 \end{pmatrix} = \begin{pmatrix} (-2)(-2)+1\cdot0 \\ 3(-2)+(-1)\cdot0 \end{pmatrix} = \begin{pmatrix} 4 \\ -6 \end{pmatrix}
+\]
+
+\textbf{Ответ:} \( x = 4, \quad y = -6 \)
+
+\subsection*{5. Исследование системы на совместность}
+
+\textbf{Система:} (не приведена в задании полностью, предположим общий вид) \\
+Для исследования системы необходимо привести её к ступенчатому виду методом Гаусса и определить ранги матрицы коэффициентов и расширенной матрицы. Если ранги равны, система совместна. Далее находится общее решение и выбирается частное.
+
+\subsection*{6. Векторы}
+
+\textbf{Дано:} \( \mathbf{a} = (-3; -1; 0), \quad \mathbf{b} = (4; -2; 3) \)
+
+\begin{enumerate}
+    \item Скалярное произведение:
+    \[
+    \mathbf{a} \cdot \mathbf{b} = (-3)\cdot4 + (-1)\cdot(-2) + 0\cdot3 = -12 + 2 + 0 = -10
+    \]
+    
+    \item Векторное произведение:
+    \[
+    \mathbf{a} \times \mathbf{b} = \begin{vmatrix}
+    \mathbf{i} & \mathbf{j} & \mathbf{k} \\
+    -3 & -1 & 0 \\
+    4 & -2 & 3
+    \end{vmatrix} = \mathbf{i}((-1)\cdot3 - 0\cdot(-2)) - \mathbf{j}((-3)\cdot3 - 0\cdot4) + \mathbf{k}((-3)\cdot(-2) - (-1)\cdot4)
+    \]
+    \[
+    = \mathbf{i}(-3) - \mathbf{j}(-9) + \mathbf{k}(6 + 4) = (-3, 9, 10)
+    \]
+    
+    \item Проекция вектора \( \mathbf{b} \) на вектор \( \mathbf{a} \):
+    \[
+    \text{пр}_{\mathbf{a}} \mathbf{b} = \frac{\mathbf{a} \cdot \mathbf{b}}{|\mathbf{a}|} = \frac{-10}{\sqrt{(-3)^2 + (-1)^2 + 0^2}} = \frac{-10}{\sqrt{10}} = -\sqrt{10}
+    \]
+    
+    \item Угол между векторами \( \mathbf{e} = (-2, -2) \) и \( \mathbf{f} = (4, 0) \):
+    \[
+    \cos \theta = \frac{\mathbf{e} \cdot \mathbf{f}}{|\mathbf{e}| \cdot |\mathbf{f}|} = \frac{(-2)\cdot4 + (-2)\cdot0}{\sqrt{(-2)^2 + (-2)^2} \cdot \sqrt{4^2 + 0^2}} = \frac{-8}{\sqrt{8} \cdot 4} = \frac{-8}{4\sqrt{8}} = -\frac{2}{\sqrt{8}} = -\frac{\sqrt{2}}{2}
+    \]
+    \[
+    \theta = \arccos\left(-\frac{\sqrt{2}}{2}\right) = \frac{3\pi}{4} \quad (\text{или } 135^\circ)
+    \]
+\end{enumerate}
+
+\end{document}
